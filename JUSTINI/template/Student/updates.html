@@ -1,0 +1,53 @@
+{% extends 'Student/index.html' %}
+
+{% load static %}
+  {% block content %}
+ <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+    <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+</head>
+
+<body class="hold-transition sidebar-mini">
+
+<div class="wrapper">
+
+    
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title md-6">computer programmer</h5>
+          </div>
+          <div class="card-body">
+              
+            <h6 class="card-title">Special title treatment</h6><br>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">See more</a>
+          </div>
+        </div>
+        
+
+</div>
+<style type="text/css">
+    .card-body {
+        background-color: rgb(13, 13, 114);
+    }
+    .card-header{
+        background-color: green;
+        float: left;
+    }
+
+    h5, h6{
+        text-transform: uppercase;
+    }
+    .btn-primary{
+      background-color:rgb(19, 14, 15);
+      border-radius: 10px;
+      margin-left: 60px;
+    }
+    </style>
+{% endblock content %}
+
+   

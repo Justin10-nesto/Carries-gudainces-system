@@ -1,0 +1,59 @@
+ {%load static %} {% include 'Admin_s/index.html' %}
+<div class="wrapper">
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+
+                <body class="hold-transition sidebar-mini">
+                    <div class="wrapper">
+
+                        <body class="hold-transition sidebar-mini">
+                            <center>
+                                <div class="wrapper">
+
+                                    <div class="row">
+                                        <!-- left column -->
+                                        <div class="col-md-10 m-6">
+                                            <!-- general form elements -->
+                                            <div class="card card-primary">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Group Form.</h3>
+                                                </div>
+
+
+                                                <form method="POST" action="{% url 'process_adding_group' %}">
+                                                    {% csrf_token %}
+                                                    <div class="form-group">
+
+                                                        <div class="form-group">
+                                                            <label for="">Group</label>
+                                                            <select name="group" class="form-control">
+                                                {% for gr in group %}
+                                                                <option value="{{gr.group_id}}">{{gr.name}}</option>
+                                                                {% endfor %}
+                                        </select>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="">user</label>
+                                                            <select name="user" class="form-control">
+                                                                {% for u in us %}
+                                                <option value="{{u.id}}">{{u.username}}</option>
+                                                {% endfor %}
+                                        </select>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary btn-center">ADD</button>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+                    </section>
+            </div>

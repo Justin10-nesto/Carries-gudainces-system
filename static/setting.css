@@ -1,0 +1,72 @@
+.content-wrapper {
+    background-color: antiquewhite;
+}
+
+.left_us {
+    width: 320px;
+    height: 800px;
+    float: left;
+    display: inline;
+    background-color: black;
+}
+
+.left_us .cnt {
+    padding-left: 120px;
+}
+
+input[type="file"] {
+    margin-top: 2px;
+    width: 250px;
+    background-color: antiquewhite;
+    border: 2px solid black;
+}
+
+table {
+    width: 300px;
+}
+
+table tr {
+    padding-top: 10px;
+}
+
+table tr td {
+    text-transform: capitalize;
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+.txt {
+    width: 300px;
+    border: 0;
+    border-bottom: 2px solid black;
+    background-color: antiquewhite;
+}
+
+.submit {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px 150px;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 5px 30px;
+    outline: none;
+    color: black;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.im {
+    width: 200px;
+    height: 150px;
+    padding: 25px;
+    border-radius: 50%;
+}
+
+.right_us {
+    width: 748px;
+    height: 800px;
+    color: black;
+    background-color: antiquewhite;
+    float: right;
+}

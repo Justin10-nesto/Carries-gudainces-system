@@ -1,0 +1,74 @@
+    table thead th {
+        text-transform: capitalize;
+        background-image: none;
+    }
+        
+    .card-tools .btn-primary {
+        background-color: rgb(175, 151, 15);
+    }
+        
+    .main-sidebar {
+        width: 300px;
+    }
+        
+    .nav-item:hover {
+        background-color: blue;
+    }
+        
+    .nav-item li,
+    .nav-item {
+        text-align: left;
+        text-transform: capitalize;
+    }
+        
+    .nav-item li:hover {
+        background-color: brown;
+        text-align: center;
+        text-transform: capitalize;
+    }
+        
+    .card-title {
+        text-transform: uppercase;
+        align-items: center;
+        margin: auto;
+    }
+        
+    .content-wrapper {
+        background-color: green;
+    }
+        
+    p {
+        font-family: 'Times New Roman', Times, serif;
+        padding-left: 20px;
+        text-align: left;
+    }
+        
+    h3 {
+        text-transform: uppercase;
+    }
+        
+    #pull_right {
+        float: right;
+        text-align: right;
+        margin-right: 5px;
+        padding-right: 16px;
+    }
+        
+    .padding_right {
+        width: 80%;
+        float: right;
+        margin-left: 20%;
+        border-radius: 18px;
+        font-size: 6rem;
+    }
+        
+    .padding_left {
+        width: 80%;
+        float: left;
+    }
+        
+    .msg {
+        width: 800px;
+        background-color: rgb(71, 9, 129);
+        color: rgb(230, 218, 218);
+    }

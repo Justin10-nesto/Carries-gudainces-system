@@ -1,0 +1,59 @@
+{% extends 'Admin_s/index.html' %} {% load static %} {% block content %}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-8 m-10">
+                    <div class="card card-primary">
+                        <div class="card-header" align="center">
+                            <h3 class="card-title" bgcolor="green">User Registration Form</h3>
+                        </div>
+                        <form action="{% url 'updateuser' user.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="">First Name</label>
+                                <input type="text" name="first_name" value="{{user.first_name}}" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Last Name</label>
+                                <input type="text" name="last_name" value="{{user.last_name}}" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Username</label>
+                                <input type="text" name="username" value="{{user.username}}" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="text" name="email" value="{{user.email}}" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Password</label>
+                                <input type="Password" name="password1" value="{{user.password}}" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="">User Type</label>
+
+                                <select name="Usergr" class="form-control">
+                        {% for i in group %}
+                        <option value="{{i.name}}">{{i.name}}</option>
+
+                        {% endfor %}
+                                           </select>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-center">Register</button>
+                            </div>
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+{% endblock %}
