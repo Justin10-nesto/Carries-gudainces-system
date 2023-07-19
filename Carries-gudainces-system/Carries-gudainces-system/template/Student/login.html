@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <title>CARRIER GUIDANCE SYSTEM</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'lg.css' %}">
+</head>
+
+<body>
+    <form class="box" action="{% url 'loginauth' %}" method="POST">
+        {% csrf_token %}
+        <LOGIN>CGS LOGIN</h1>
+            <input type="text" name="username" placeholder="username">
+            <input type="password" name="password" placeholder="password">
+            <input type="submit" name="" value="LOGIN">
+    </form>
+    <p>are your new user
+        <a href="{% url 'register' %}">Sign up</a>
+    </p>
+
+    {% for msg in messages %}
+    <p class="resp-info">{{msg}}</p>
+    {% endfor %}
+
+    <body>
+
+</html>
+</body>
+
+</html>
+{% for msg in messages %}
+<span class="resp-info">{{msg}}</span> {% endfor %}
+</body>
+
+</html>

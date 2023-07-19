@@ -1,0 +1,267 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carrier Guidance System</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{% static 'plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}  %}">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    <div class="wrapper">
+
+        <nav class="main-header navbar navbar-expand navbar-dark">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="" class="nav-link">Home</a>
+                </li>
+            </ul>
+
+            <!-- Right navbar links -->
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="" class="brand-link">
+                <span class="brand-text font-weight-light">UNITED REPUBLIC OF TANZANIA</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="{% static 'dist/img/user2-160x160.jpeg' %}" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="{% url 'sindex' %}" class="d-block">CGS</a>
+                    </div>
+                </div>
+
+                <!-- SidebarSearch Form -->
+                <div class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                        <li class="nav-item menu-open">
+                            <a href="{% url 'sindex' %}" class="nav-link active">
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <i class=""></i>
+                                <p>
+                                    Courses
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <ul class="nav-item">
+                                    <a href="{% url 'student_courses' %}" class="nav-link">
+                                        <i class="caret down icon"></i>
+                                        <li>All courses</li>
+                                    </a>
+                                </ul>
+                                <ul class="nav-item">
+                                    <a href="{% url 'student_art_cours' %}" class="nav-link">
+                                        <li>Arts</li>
+                                    </a>
+                                </ul>
+                                <ul class="nav-item">
+                                    <a href="{% url 'student_sci_cours' %}" class="nav-link">
+                                        <i class="caret down icon"></i>
+                                        <li>Science</li>
+                                    </a>
+                                </ul>
+                                <ul class="nav-item">
+                                    <a href="{% url 'student_eco_cours' %}" class="nav-link">
+                                        <li>Economics</li>
+                                    </a>
+                                </ul>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class=""></i>
+                                <p>
+                                    Group Discussion
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <ul class="nav-item">
+                                    <a href="{% url 'courses_messages' %}" class="nav-link">
+                                        <i class="caret down icon"></i>
+                                        <li>Group one</li>
+                                    </a>
+                                </ul>
+                                <ul class="nav-item">
+                                    <a href="{% url 'courses_messages' %}" class="nav-link">
+                                        <li>Group Two</li>
+                                    </a>
+                                </ul>
+
+                                <ul class="nav-item">
+                                    <a href="{% url 'courses_messages' %}" class="nav-link">
+                                        <li>Group Three</li>
+                                    </a>
+                                </ul>
+                            </ul>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'courses_update' %}" class="nav-link">
+                                <p>
+                                    Update infomations
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <p>
+                                    materials
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'student_setting' %}" class="nav-link">
+                                <p>
+                                    Setting
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'logout_data' %}" class="nav-link">
+                                <p>
+                                    Logout
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+        </aside>
+        <link rel="stylesheet" href="{% static 'setting.css' %}">
+        <div class="content-wrapper ">
+            <h1>PROFILE MANAGEMNT</h1>
+
+            <div class="left_us ">
+                <img class="im " src="{% static 'dist/img/user2-160x160.jpeg' %} ">
+                <p class="cnt ">{{data.username}}</p>
+                <p>Position: {{data.groups.name}}
+                </p>
+                <p>Date registered : {{data.date_joined}}</p>
+
+                <p>upload your photo here</p>
+
+                <form method="POST " action="{% url 'student_process_user_photo' %} ">
+                    {% csrf_token %}
+                    <input type="file" name="photo">
+                    <input type="submit" class="submit" value="submit ">
+                </form>
+            </div>
+
+            <div class="right_us ">
+                <form action="{% url 'student_process_user_info' %}" method="POST">
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td>first name:</td>
+                            <td>last name:</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text " class="txt " name="fname" value="{{data.first_name}} "></td>
+                            <td><input type="text " class="txt " name="lname" value="{{data.last_name}} "></td>
+                        </tr>
+
+                        <tr>
+                            <td>User name:</td>
+                            <td>phone number:</td>
+                        </tr>
+                        <tr>
+                            <td><input class="txt " type="text " name="uname" value="{{data.username}} "></td>
+                            <td><input class="txt " type="text " name="phon_no" value=" "></td>
+                        </tr>
+
+                        <td>Email:</td>
+                        <td>location:</td>
+                        </tr>
+                        <tr>
+                            <td><input class="txt " type="email " name="email" value="{{data.email}} "></td>
+                            <td><input class="txt " type="text " name="location" value=" "></td>
+                        </tr>
+                        <tr>
+                            <td>date of birth:</td>
+                            <td>gender:</td>
+                        </tr>
+                        <tr>
+                            <td><input class="txt" type="date" name="bod" value=""></td>
+                            <td><input class="txt" type="checkbox" name="gender" value="1">male <input type="checkbox" name="gender" value="0" id="">female</td>
+                        </tr>
+                        <tr>
+                            <tr>
+                                <td>password:</td>
+                                <td> Verify password:</td>
+                            </tr>
+                            <tr>
+                                <td><input class="txt" type="password" name="password1" value=" "></td>
+                                <td><input type="password" class="txt " name="password2" value=" "></td>
+                            </tr>
+
+                            <tr>
+                                <td><input class="submit " type="submit" value="Save "></td>
+                                <td><input class="submit " type="reset" value="Reset "></td>
+                            </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        {% endblock %}

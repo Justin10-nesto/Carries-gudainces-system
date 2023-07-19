@@ -1,0 +1,62 @@
+{%load static %} {% include 'Admin_s/index.html' %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-8 m-10">
+                    {% if perns.auth.change_user %}
+
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header" align="center">
+                            <h3 class="card-title" bgcolor="green">User Registration Form</h3>
+                        </div>
+                        <form action="{% url 'register_user' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="">First Name</label>
+                                <input type="text" name="first_name" value="" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Last Name</label>
+                                <input type="text" name="last_name" value="" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Username</label>
+                                <input type="text" name="username" value="" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="text" name="email" value="" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Password</label>
+                                <input type="Password" name="password1" value="" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="">User Type</label>
+
+                                <select name="Usergr" class="form-control">
+                            {% for gr in group %}
+                                    <option value="{{gr.name}}">{{gr.name}}</option>
+
+                                    {% endfor %}</select>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-center">Register</button>
+                            </div>
+
+                    </div>
+                    </form>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+{% endblock %}

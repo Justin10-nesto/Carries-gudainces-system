@@ -1,0 +1,69 @@
+{% extends 'lecture/index.html' %} {% load static %} {% block content %} /
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            </head>
+
+            <body class="hold-transition sidebar-mini">
+                <center>
+                    <div class="wrapper">
+                        <!-- /.card -->
+
+                        <div class="card">
+                            <div class="card-header border-transparent">
+                                <h3 class="card-title">group infomation.</h3>
+
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <div>
+                                        <div class="card-tools">
+                                            <a href="{% url 'lecture_addgroup'%}" class="btn btn-flat btn-primary float-left"><span class="fas fa-plus"></span>  Create New group</a>
+                                        </div>
+
+                                        <thead>
+
+                                            <tr>
+                                                <th>s/n</th>
+                                                <th>group name</th>
+                                                <th>category</th>
+                                                <th>specialization</th>
+                                                <th>number of peoples </th>
+                                                <th>
+                                                    <ABBR></ABBR>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody> {% for d in data %}
+                                            <tr>
+                                                <td>{{d.group_id}}</td>
+                                                <td>{{d.name}}</td>
+                                                <td>{{d.category}}</td>
+                                                <td>{{d.description}}</td>
+                                                <td></td>
+                                                <td><button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                                                Action
+                                              <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                                    <div class="dropdown-menu" role="menu">
+                                                        <a class="dropdown-item" href="{% url 'lecture_adduser' %}"><span class=" fa fa-edit text-primary "></span> add group member</a>
+                                                        <a class="dropdown-item " href="{% url 'lecture_edittinggroup' d.group_id %}"><span class=" fa fa-edit text-primary "></span> Edit group info</a>
+                                                        <a class="dropdown-item " href="{% url 'lecture_groupmessage' d.group_id %}"><span class=" fa fa-edit text-primary "></span> view group chats</a>
+                                                        <a class="dropdown-item delete_data " href=" "><span class="fa fa-trash text-danger "></span> block group</a>
+
+                                                </td>
+
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                </table>
+                                </div>
+                                <!-- /.card-body -->
+                                </div>
+                                <!-- /.card -->
+
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        {% endblock %}

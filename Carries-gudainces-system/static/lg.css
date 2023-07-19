@@ -1,0 +1,143 @@
+                body {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+                width: auto;
+            }
+                
+            .box {
+                width: 300px;
+                padding: 40px;
+                position: absolute;
+                ;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #4e6439;
+                text-align: center;
+            }
+                
+            .box h1 {
+                color: white;
+                text-transform: uppercase;
+            }
+                
+            .box h2 {
+                color: black;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+                
+            .box h2 a {
+                text-decoration: none
+            }
+                
+            .box input[type="text"],
+            .box input[type="password"] {
+                border: 0;
+                background: none;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+                border: 2px solid #3498db;
+                width: 200px;
+                padding: 14px 10px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+                cursor: pointer;
+            }
+                
+            .box input[type="text"]:focus,
+            .box input[type="password"]:focus {
+                width: 290px;
+                border-color: rgb(126, 46, 46);
+            }
+                
+            .box input[type="submit"] {
+                border: 0;
+                background: none;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+                border: 2px solid #2ecc71;
+                padding: 14px 40px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+                cursor: pointer;
+            }
+                
+            .box input[type="submit"]:hover {
+                background: #2ecc71;
+            }
+                
+            .box p {
+                text-decoration: : none;
+            }
+                
+            * {
+                margin: 0;
+                padding: 0;
+            }
+                
+            .leftcolum {
+                width: 150px;
+                height: 30px;
+                float: left;
+                padding-left: 80px;
+                padding-top: auto;
+                text-transform: capitalize;
+            }
+                
+            .rightcolum {
+                width: 1000px;
+                height: 30px;
+                padding-top: auto;
+            }
+                
+            input[type="text"],
+            input[type="password"] {
+                width: 200px;
+                background-color: rgb(196, 184, 206);
+                height: 20px;
+                border: 1px solid black;
+                border-radius: 10px;
+                color: black;
+                display: block;
+                text-align: center;
+                transition: 0.25s;
+                cursor: pointer;
+            }
+                
+            input[type="text"]:focus {
+                width: 500px;
+                height: 20px;
+                border-bottom: 1px solid black;
+                border-radius: 0%;
+                border: 0px;
+                color: white
+            }
+                
+            input[type="submit"] {
+                border: 0;
+                background: none;
+                display: block;
+                margin: 20px 150px;
+                text-align: center;
+                border: 2px solid #2ecc71;
+                padding: 5px 30px;
+                outline: none;
+                color: black;
+                transition: 0.25s;
+                cursor: pointer;
+            }
+                
+            .box input[type="submit"]:hover {
+                background: #2ecc71;
+            }
+                
+            .box p {
+                text-decoration: : none;

@@ -1,0 +1,76 @@
+{% extends 'lecture/index.html' %} {% load static %} {% block content %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-10 m-6">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">group Form.</h3>
+                        </div>
+
+
+                        <form method="POST" action="{% url 'lecture_process_groups' %}">
+
+                            <div class="form-group">
+
+                                <div class="form-group">
+                                    <label for="">group name: </label>
+                                    <input type="text" name="name" class="form-control" required>
+                                </div>
+
+                                <div class="form-group">
+                                    {% csrf_token %}
+                                    <label for="">category</label>
+                                    <select name="category" class="form-control">
+                                                <option value="arts">arts</option>
+                                                <option value="science">science</option>
+                                                 <option value="economice">economice</option>
+                                                 <option value="social">social</option>
+                                        </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">description:</label>
+                                    <input type="text" name="description" class="form-control" required>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary btn-center">ADD</button>
+                                </div>
+
+                        </form>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style rel="stylesheet">
+            .card-title {
+                text-transform: uppercase;
+                align-items: center;
+                margin: auto;
+            }
+            
+            .content-wrapper {
+                background-color: green;
+            }
+            
+            .card-header {
+                align-items: center;
+                background-color: chocolate;
+            }
+            
+            .container-fluid {
+                background-color: blueviolet;
+            }
+            
+            label {
+                text-transform: capitalize;
+                text-align: center;
+            }
+        </style>
+        {% endblock %}

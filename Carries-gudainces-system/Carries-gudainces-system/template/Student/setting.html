@@ -1,0 +1,70 @@
+{% extends 'Student/index.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'setting.css' %}">
+
+<div class="content-wrapper ">
+    <h1>PROFILE MANAGEMNT</h1>
+
+    <div class="left_us ">
+        <img class="im " src="{% static 'dist/img/user2-160x160.jpeg' %} ">
+        <p class="cnt ">{{data.username}}</p>
+        <p>Position: {{data.groups.name}}
+        </p>
+        <p>Date registered : {{data.date_joined}}</p>
+
+        <p>upload your photo here</p>
+
+        <form method="POST " action="{% url 'student_process_user_photo' %} ">
+            {% csrf_token %}
+            <input type="file" name="photo">
+            <input type="submit" class="submit" value="submit ">
+        </form>
+    </div>
+
+    <div class="right_us ">
+        <form action="{% url 'student_process_user_info' %}" method="POST">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td><b>first name:</b></td>
+                    <td>{{data.first_name}}</td>
+                </tr>
+                <tr>
+                    <td><b>last name:</b></td>
+                    <td>{{data.last_name}}</td>
+                </tr>
+
+                <tr>
+                    <td><b>User name:</b></td>
+                    <td>{{data.username}}</td>
+                </tr>
+                <tr>
+                    <td><b>phone number:</b></td>
+                    <td>{{dat.phon_no}}</td>
+                </tr>
+
+                <td><b>Email:</b></td>
+                <td>{{data.email}}</td>
+                </tr>
+                <tr>
+                    <td><b>location:</b></td>
+                    <td>{{dat.location}}</td>
+                </tr>
+                <tr>
+                    <td><b>date of birth:</b></td>
+                    <td>{{dat.bod}}</td>
+                </tr>
+                <tr>
+                    <td><b>gender:</b></td>
+                    <td>
+                        {% if dat.gender == 1 %} male {% elif dat.gender == 0 %}female {% else %}None {% endif %}
+                    </td>
+                    <tr>
+                        <td>
+                            <a href="{% url 'student_editsetting' %}">Edit</a>
+                        </td>
+                    </tr>
+                </tr>
+            </table>
+        </form>
+    </div>
+    {% endblock %}

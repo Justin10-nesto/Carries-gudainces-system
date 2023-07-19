@@ -1,0 +1,66 @@
+{%load static %} {% include 'Admin_s/index.html' %}
+<div class="wrapper">
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+
+                <body class="hold-transition sidebar-mini">
+                    <div class="wrapper">
+                        <!-- /.card -->
+
+                        <div class="card">
+
+
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="card-header">
+                                    <h3 class="card-title">POST Form.</h3>
+                                </div>
+                                {% for d in data %}
+
+                                <form method="POST" action="{% url 'change_editted_post' d.post_id %}">
+                                    {% csrf_token %}
+
+                                    <div class="form-group">
+                                        <div classform-group ">
+        <label for=" ">Title: </label>
+        <input type="text " name = "name " value="{{d.tittle}} " class="form-control " required>
+    </div>
+    <div form-group">
+                                            <label for="">category</label>
+                                            <select name="category" class="form-control">
+                                                <option value="arts">arts</option>
+                                                <option value="science">science</option>
+                                                 <option value="economice">economice</option>
+
+                                                 <option value="social">Others</option>
+                                </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Body</label>
+                                            <TextArea name="description" value="{{d.description}}" class="form-control" required></TextArea>
+                                        </div>
+
+
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-primary btn-center">ADD</button>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            {% endfor %}
+                            </form>
+                        </div>
+                        <style>
+                            .card-title {
+                                text-transform: uppercase;
+                            }
+                            
+                            back label {
+                                text-transform: capitalize;
+                                text-align: center;
+                            }
+                        </style>

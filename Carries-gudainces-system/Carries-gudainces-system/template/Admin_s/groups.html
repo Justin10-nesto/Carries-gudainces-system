@@ -1,0 +1,121 @@
+{%load static %} {% include 'Admin_s/index.html' %}
+<div class="wrapper">
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+
+                <body class="hold-transition sidebar-mini">
+                    <div class="wrapper">
+                        <div class="card-header border-transparent">
+                            <h3 class="card-title">group infomation.</h3>
+
+                        </div>
+
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <div>
+
+                                    {% if perms.Student.add_usergroup %}
+
+                                    <div class="card-tools">
+                                        <a href="{% url 'addgroup'%}" class="btn btn-flat btn-primary float-left"><span class="fas fa-plus"></span>  Create New group</a>
+                                    </div>
+                                    {% endif %}
+
+
+                                    <thead>
+
+                                        <tr>
+                                            <th>s/n</th>
+                                            <th>group name</th>
+                                            <th>category</th>
+                                            <th>specialization</th>
+                                            <th>number of peoples </th>
+                                            <th>
+                                                <ABBR></ABBR>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody> {% for d in data %}
+                                        <tr>
+                                            <td>{{d.group_id}}</td>
+                                            <td>{{d.name}}</td>
+                                            <td>{{d.category}}</td>
+                                            <td>{{d.description}}</td>
+                                            <td></td>
+                                            <td><button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                                                Action
+                                              <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                                <div class="dropdown-menu" role="menu">
+
+                                                    {% if perms.Student.add_ugr_usr %}
+                                                    <a class="dropdown-item" href="{% url 'adduser' %}"><span class=" fa fa-edit text-primary "></span> add group member</a> {% endif %}
+                                                    <a class="dropdown-item " href="{% url 'edittinggroup' d.group_id %}"><span class=" fa fa-edit text-primary "></span> Edit group info</a>
+                                                    <a class="dropdown-item" href="{% url 'adduser' %}"><span class=" fa fa-edit text-primary "></span> add group member</a>
+                                                    <a class="dropdown-item " href="{% url 'groupmessage' d.group_id %}"><span class=" fa fa-edit text-primary "></span> view group chats</a>
+                                                    <a class="dropdown-item delete_data " href="{% url 'delete_group' d.group_id %}"><span class="fa fa-trash text-danger "></span>Delete  group</a>
+
+
+                                            </td>
+
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                            </table>
+                            </div>
+                            <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+
+                        </div>
+                        <!-- /.col -->
+                    </div>
+
+                    <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+                    <!-- Bootstrap 4 -->
+                    <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+                    <!-- DataTables  & Plugins -->
+                    <script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
+                    <script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+                    <script src="{% static 'plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+                    <script src="{% static 'plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+                    <script src="{% static 'plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+                    <script src="{% static 'plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+                    <script src="{% static 'plugins/jszip/jszip.min.js' %}"></script>
+                    <script src="{% static 'plugins/pdfmake/pdfmake.min.js' %}"></script>
+                    <script src="{% static 'plugins/pdfmake/vfs_fonts.js' %}"></script>
+                    <script src="{% static 'plugins/datatables-buttons/js/buttons.html5.min.js' %}"></script>
+                    <script src="{% static 'plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
+                    <script src="{% static 'plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+                    <!-- AdminLTE App -->
+                    <script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+                    <!-- AdminLTE for demo purposes -->
+                    <script src="{% static 'dist/js/demo.js' %}"></script>
+                    <!-- Page specific script -->
+                    <script>
+                        $(function() {
+                            $("#example1").DataTable({
+                                "responsive": true,
+                                "ordering": true,
+                                "lengthChange": false,
+                                "autoWidth": false,
+                                "buttons": ["csv", "excel", "pdf", "print"]
+                            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+                            $('#example2').DataTable({
+                                "paging": true,
+                                "lengthChange": false,
+                                "searching": false,
+                                "info": true,
+                                "autoWidth": false,
+                                "responsive": true,
+                            });
+                        });
+                    </script>
+                </body>
+
+                </html>
+
+                </html>

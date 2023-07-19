@@ -1,0 +1,41 @@
+{%load static %} {% include 'Admin_s/index.html' %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="card card-primary">
+                <h3 class="card-title" bgcolor="green">User Registration Form</h3>
+            </div>
+            {% for msg in messages %}
+            <p>{{msg}}</p>
+            {% endfor %}
+            <form action="{% url 'Process_role' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="">Role Name</label>
+                    <input type="text" name="name" value="" class="form-control">
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-center">ADD</button>
+                </div>
+
+        </div>
+        </form>
+
+    </div>
+</div>
+</section>
+</div>
+<style>
+    .permision {
+        width: 30px;
+        margin: 5px;
+        border: 1px solid black;
+        background-color: blue;
+    }
+    
+    .per_p {
+        width: 100px;
+    }
+</style>

@@ -1,0 +1,91 @@
+{% extends 'lecture/index.html' %} {% load static %} {% block content %} /
+
+<div class="content-wrapper">
+
+    <div class="content">
+        <div class="container">
+
+
+            <div class="card">
+                <div class="card-header border-transparent">
+                    <h3 class="card-title">courses UPDATe infomation.</h3>
+
+                </div>
+                <div>
+                    <div class="card-tools">
+                        <a href="{% url 'lecture_addpost' %}" class="btn btn-flat btn-primary float-left"><span class="fas fa-plus"></span>  Create New course</a>
+                    </div><br><br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            {% for d in data %}
+                            <div class="card card-primary card-outline">
+
+                                <div class="card-header user-panel mt-3 pb-3 mb-3 d-flex">
+                                    <div class="image">
+                                        <img src="{% static 'dist/img/user2-160x160.jpeg' %}" class="img-circle elevation-2" alt="User Image">
+                                    </div>
+                                    <h5 class="card-title m-0">&nbsp&nbsp;{{d.User}}</h5>
+                                    <p> <strong id="pull_right">5m ago</strong></P>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-title">{{d.tittle}} </h6>
+                                    <p class="card-text">
+                                        {{d.description}}
+                                    </p>
+
+                                    <a href="#" class="card-link">see more</a> </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="float-right d-none d-sm-inline">
+                Anything you want
+            </div>
+    </div>
+    <style>
+        p {
+            font-family: 'Times New Roman', Times, serif;
+            padding-left: 20px;
+            text-align: left;
+        }
+        
+        h3 {
+            text-transform: uppercase;
+        }
+        
+        #pull_right {
+            float: right;
+            text-align: right;
+            margin-right: 5px;
+            padding-right: 16px;
+        }
+        
+        .padding_right {
+            float: right;
+            margin-left: 20%;
+        }
+        
+        .padding_left {
+            width: 80%;
+            float: left;
+        }
+    </style>
+    {% endblock %}

@@ -1,0 +1,95 @@
+{%load static %} {% include 'Admin_s/index.html' %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="card card-primary">
+                <h3 class="card-title" bgcolor="green">User Registration Form</h3>
+            </div>
+            {% for msg in messages %}
+            <p>{{msg}}</p>
+            {% endfor %}
+            <form action="{% url 'remove_role_Permission' group.id %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="">Role Name</label>
+                    <input type="text" name="name" value="{{group.name}}" class="form-control">
+                </div> {% for dat in data %} {% if dat != "" %}
+                <input type="checkbox" checked name="{{dat.name}}" class='permision' value="">
+                <span class="per_p">{{dat.name}}</span><br> {% else %} <input type="checkbox" name="{{dat.name}}" class='permision' value="">
+                <span class="per_p">{{dat.name}}</span><br> {% endif %}{% endfor %}
+        </div>
+
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary btn-center">Remove</button>
+        </div>
+
+    </div>
+    </form>
+
+</div>
+</div>
+</section>
+</div>
+<style>
+    .permision {
+        width: 30px;
+        margin: 5px;
+        border: 1px solid black;
+        background-color: blue;
+    }
+    
+    .per_p {
+        width: 100px;
+    }
+</style>
+
+
+
+<script src="{% static 'plugins/jquery/jquery.min.js' %} "></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %} "></script>
+<!-- DataTables  & Plugins -->
+<script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %} "></script>
+<script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %} "></script>
+<script src="{% static 'plugins/datatables-responsive/js/dataTables.responsive.min.js' %} "></script>
+<script src="{% static 'plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %} "></script>
+<script src="{% static 'plugins/datatables-buttons/js/dataTables.buttons.min.js' %} "></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %} "></script>
+<script src="{% static 'plugins/jszip/jszip.min.js' %} "></script>
+<script src="{% static 'plugins/pdfmake/pdfmake.min.js' %} "></script>
+<script src="{% static 'plugins/pdfmake/vfs_fonts.js' %} "></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.html5.min.js' %} "></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.print.min.js' %} "></script>
+<script src="{% static 'plugins/datatables-buttons/js/buttons.colVis.min.js' %} "></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dist/js/adminlte.min.js' %} "></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'dist/js/demo.js' %} "></script>
+<!-- Page specific script -->
+<script>
+    $(function() {
+        $("#example1 ").DataTable({
+            "responsive ": true,
+            "ordering ": true,
+            "lengthChange ": false,
+            "autoWidth ": false,
+            "buttons ": ["csv ", "excel ", "pdf ", "print "]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging ": true,
+            "lengthChange ": false,
+            "searching ": false,
+            "info ": true,
+            "autoWidth ": false,
+            "responsive ": true,
+        });
+    });
+</script>
+</body>
+
+</html>
+
+</html>
+</html>

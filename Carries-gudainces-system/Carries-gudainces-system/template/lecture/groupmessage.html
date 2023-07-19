@@ -1,0 +1,82 @@
+{% extends 'lecture/index.html' %} {% load static %} {% block content %}
+<!-- Theme style -->
+<link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            </head>
+
+            <body class="hold-transition sidebar-mini">
+                <center>
+                    <div class="wrapper">
+
+                        <div class="card">
+
+                            <div class="padding_left">
+                                <div class="small-box bg-yellow">
+
+                                    <p>NETWOKING <strong id="pull_right">ALEX JOHN </strong></P>
+                                    <p>
+                                        hello guys
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="padding_right">
+                                <div class="small-box bg-green">
+
+                                    <p>NETWOKING <strong id="pull_right">ALEX JOHN </strong></P>
+                                    <p>
+                                        yaap
+                                    </p>
+                                </div>
+                                <br>
+                                <br>
+                                <form>
+                                    <input type="text" name="message" placeholder="enter your message here" class="form-control">
+                                    <input type="submit" value="send" class="btn btn-danger">
+                                </form>
+
+
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container-fluid -->
+                    </section>
+                    <!-- /.content -->
+        </div>
+    </div>
+
+    <style type="text/css">
+        p {
+            font-family: 'Times New Roman', Times, serif;
+            padding-left: 20px;
+            text-align: left;
+        }
+        
+        h3 {
+            text-transform: uppercase;
+        }
+        
+        #pull_right {
+            float: right;
+            text-align: right;
+            margin-right: 5px;
+            padding-right: 16px;
+        }
+        
+        .padding_right {
+            width: 80%;
+            float: right;
+            margin-left: 20%;
+        }
+        
+        .padding_left {
+            width: 80%;
+            float: left;
+        }
+    </style>
+    {% endblock content %}
